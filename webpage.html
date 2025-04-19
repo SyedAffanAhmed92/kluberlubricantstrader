@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuppa Traders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .kluber-product:hover {
+            background-color: #fefcbf;
+            cursor: pointer;
+        }
+        .oks-product:hover {
+            background-color: #fee2e2;
+            cursor: pointer;
+        }
+        .total-product:hover {
+            background-color: #bfdbfe;
+            cursor: pointer;
+        }
+        .industry-item:hover {
+            background-color: #fefcbf;
+            cursor: pointer;
+        }
+        #productModal, #industryModal {
+            display: none;
+        }
+        #productModal.show, #industryModal.show {
+            display: flex;
+        }
+        .product-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .logo .kuppa {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-style: italic;
+            color: #FFC107;
+            font-size: 2.1875rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .logo .subtitle {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            color: #FFFFFF;
+            font-size: 1.25rem;
+        }
+        .brand-logo {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@1,700&family=Source+Sans+Pro:ital,wght@1,400&family=Inter&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <!-- Header -->
+    <header class="bg-black text-yellow-400 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="logo">
+                <h1>
+                    <span class="kuppa">KUPPA</span>
+                    <span class="subtitle">TRADERS</span>
+                </h1>
+            </div>
+            <nav>
+                <a href="#home" class="px-4 hover:text-yellow-300 nav-link">Home</a>
+                <a href="#about" class="px-4 hover:text-yellow-300 nav-link">About Us</a>
+                <a href="#products" class="px-4 hover:text-yellow-300 nav-link">Products</a>
+                <a href="#industries" class="px-4 hover:text-yellow-300 nav-link">Industries</a>
+                <a href="#contact" class="px-4 hover:text-yellow-300 nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Premium Lubrication Solutions</h2>
+            <p class="text-lg md:text-xl mb-6">Trusted by industries worldwide, KUPPA Traders delivers high-performance Kluber, OKS, and Total Energies lubricants for superior maintenance.</p>
+            <a href="#contact" class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg mb-6">At KUPPA Traders, we are committed to delivering cutting-edge lubrication solutions that enhance the performance and longevity of industrial machinery. With years of expertise and partnerships with leading brands like Kluber, OKS, and Total Energies, we provide tailored products and services to meet the unique needs of diverse industries.</p>
+                <p class="text-lg">Our mission is to empower businesses with reliable, high-quality lubricants and exceptional technical support, ensuring operational excellence and sustainability. Trust KUPPA Traders to be your partner in maintenance care.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/100x50/000000/FFFFFF?text=Kluber" alt="Kluber Logo" class="brand-logo mx-auto">
+                    <h3 class="text-xl font-semibold mb-2">Kluber Lubricants</h3>
+                    <p>Klüber Lubrication, a Freudenberg Group brand, is a global leader in specialty lubricants, offering high-performance solutions for extreme conditions, precision, and reliability in industries like automotive, food processing, and heavy machinery.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/100x50/FF0000/FFFFFF?text=OKS" alt="OKS Logo" class="brand-logo mx-auto">
+                    <h3 class="text-xl font-semibold mb-2">OKS Lubricants</h3>
+                    <p>OKS Spezialschmierstoffe GmbH, part of the Freudenberg Group, specializes in high-quality lubricants for maintenance and operational excellence, serving industries such as manufacturing, marine, and food processing with tailored solutions.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/100x50/0055A4/FFFFFF?text=Total+Energies" alt="Total Energies Logo" class="brand-logo mx-auto">
+                    <h3 class="text-xl font-semibold mb-2">Total Energies Lubricants</h3>
+                    <p>Total Energies, a global energy company, provides advanced lubricants like hydraulic oils, thermic fluids, and gas engine oils, designed for high performance and eco-responsibility across automotive, industrial, and energy sectors.</p>
+                </div>
+            </div>
+            <!-- Product Search -->
+            <div class="max-w-5xl mx-auto">
+                <h3 class="text-2xl font-semibold text-center mb-4">Search Our Products</h3>
+                <input type="text" id="productSearch" placeholder="Enter product name..." class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-400 mb-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Kluber Products -->
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4 text-black">Kluber Products</h4>
+                        <div id="kluberProductList" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+                    </div>
+                    <!-- OKS Products -->
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4 text-red-600">OKS Products</h4>
+                        <div id="oksProductList" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+                    </div>
+                    <!-- Total Energies Products -->
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4 text-blue-600">Total Energies Products</h4>
+                        <div id="totalProductList" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="bg-gray-200 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Industries We Serve</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center industry-item" data-industry="Pharmaceutical Industry">
+                    <h3 class="text-xl font-semibold mb-2">Pharmaceutical Industry</h3>
+                    <p>Safe, compliant lubricants for precision equipment in pharmaceutical manufacturing.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center industry-item" data-industry="Food and Beverages Industries">
+                    <h3 class="text-xl font-semibold mb-2">Food and Beverages Industries</h3>
+                    <p>Food-grade lubricants ensuring safety and performance in processing environments.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center industry-item" data-industry="Rubber and Plastic Industries">
+                    <h3 class="text-xl font-semibold mb-2">Rubber and Plastic Industries</h3>
+                    <p>Specialized lubricants for efficient processing and durability in rubber and plastic production.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center industry-item" data-industry="Paper Industry">
+                    <h3 class="text-xl font-semibold mb-2">Paper Industry</h3>
+                    <p>High-performance lubricants for reliable operation in paper manufacturing equipment.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center industry-item" data-industry="Steel and Metal Working Industries">
+                    <h3 class="text-xl font-semibold mb-2">Steel and Metal Working Industries</h3>
+                    <p>Robust lubricants for heavy-duty machinery in steel and metal processing.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center industry-item" data-industry="Glass Industries">
+                    <h3 class="text-xl font-semibold mb-2">Glass Industries</h3>
+                    <p>Tailored lubricants for high-temperature and precision needs in glass production.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
+            <p class="text-lg mb-6">Ready to enhance your operations with premium lubrication solutions? Reach out to us today!</p>
+            <div class="flex justify-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+                    <p class="mb-4"><strong>Email:</strong> info@kuppatraders.com</p>
+                    <p class="mb-4"><strong>Phone:</strong> +1-800-555-1234</p>
+                    <p><strong>Address:</strong> 123 Industrial Park, Lubricant City, USA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-yellow-400 py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 Kuppa Traders. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full">
+            <h3 id="modalProductName" class="text-xl font-bold mb-2"></h3>
+            <p id="modalProductBrand" class="text-gray-600 mb-2"></p>
+            <p id="modalProductSpecs" class="text-gray-800 mb-4"></p>
+            <p class="text-gray-800 mb-4">Contact us for your quotation at <a href="mailto:info@kuppatraders.com" class="text-yellow-600 hover:underline">info@kuppatraders.com</a> or <a href="tel:+1-800-555-1234" class="text-yellow-600 hover:underline">+1-800-555-1234</a>.</p>
+            <button id="closeProductModal" class="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">Close</button>
+        </div>
+    </div>
+
+    <!-- Industry Modal -->
+    <div id="industryModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full">
+            <h3 id="modalIndustryName" class="text-xl font-bold mb-2"></h3>
+            <p class="text-gray-800 mb-4">Our engineering team will provide you the solution for your maintenance care. Please share your application, surrounding temperature, load, speed, your machine make, and contact our team at <a href="mailto:info@kuppatraders.com" class="text-yellow-600 hover:underline">info@kuppatraders.com</a> or <a href="tel:+1-800-555-1234" class="text-yellow-600 hover:underline">+1-800-555-1234</a>.</p>
+            <button id="closeIndustryModal" class="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Navigation, Product Search, Product Modal, and Industry Modal -->
+    <script>
+        const products = [
+            // Kluber Products
+            { name: "ALTEMP Q NB 50", brand: "Kluber", specs: "High-temperature paste, excellent corrosion protection, ideal for assembly.", category: "Paste", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=ALTEMP+Q+NB+50" },
+            { name: "BARRIERTA L 55/2", brand: "Kluber", specs: "Long-term grease for high temperatures, resistant to aggressive media.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=BARRIERTA+L+55/2" },
+            { name: "CENTOPLEX GLP 201 BH", brand: "Kluber", specs: "Multi-purpose grease, good low-temperature performance.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=CENTOPLEX+GLP+201+BH" },
+            { name: "GRAFLOSCON C-SG 0 ULTRA", brand: "Kluber", specs: "Graphite-based adhesive lubricant for open gears.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=GRAFLOSCON+C-SG+0+ULTRA" },
+            { name: "HOTEMP SUPER N PLUS", brand: "Kluber", specs: "Synthetic oil for high-temperature chains, low evaporation.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=HOTEMP+SUPER+N+PLUS" },
+            { name: "ISOFLEX NBU 15", brand: "Kluber", specs: "High-speed grease for spindle bearings, long service life.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=ISOFLEX+NBU+15" },
+            { name: "ISOFLEX TOPAS L 32 N", brand: "Kluber", specs: "Synthetic grease for low temperatures, food-safe.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=ISOFLEX+TOPAS+L+32+N" },
+            { name: "ISOFLEX TOPAS NB 152", brand: "Kluber", specs: "Synthetic grease for rolling bearings, high load capacity.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=ISOFLEX+TOPAS+NB+152" },
+            { name: "Klüber Madol 934 Plus", brand: "Kluber", specs: "Special oil for textile industry, low residue formation.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüber+Madol+934+Plus" },
+            { name: "Klüber Silvertex T 46", brand: "Kluber", specs: "Clean oil for knitting machines, reduces wear.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüber+Silvertex+T+46" },
+            { name: "Klüber Summit HySyn FG 68", brand: "Kluber", specs: "Food-grade hydraulic oil, high oxidation stability.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüber+Summit+HySyn+FG+68" },
+            { name: "Klüber Summit RHT 68", brand: "Kluber", specs: "Synthetic compressor oil, extended oil change intervals.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüber+Summit+RHT+68" },
+            { name: "Klüber Tyreno Fluid M-100V", brand: "Kluber", specs: "Vacuum pump oil, high thermal stability.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüber+Tyreno+Fluid+M-100V" },
+            { name: "Klüberalfa GR Y VAC 1", brand: "Kluber", specs: "PFPE-based grease for vacuum applications.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberalfa+GR+Y+VAC+1" },
+            { name: "Klüberalfa HPX 93-1202", brand: "Kluber", specs: "High-performance grease for extreme conditions.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberalfa+HPX+93-1202" },
+            { name: "Klüberfluid 9 R 100", brand: "Kluber", specs: "Synthetic fluid for chain lubrication, high adhesion.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberfluid+9+R+100" },
+            { name: "Klüberfluid C-F 4 Ultra", brand: "Kluber", specs: "Operational lubricant for gears, reduces wear.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberfluid+C-F+4+Ultra" },
+            { name: "Klüberfood 4 NH1-32", brand: "Kluber", specs: "Food-grade hydraulic oil, NSF H1 registered.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberfood+4+NH1-32" },
+            { name: "Klüberfood NH1 94-402", brand: "Kluber", specs: "Food-grade grease, high load-carrying capacity.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberfood+NH1+94-402" },
+            { name: "Klübergrease LFT 71-402", brand: "Kluber", specs: "Special grease for automotive components.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübergrease+LFT+71-402" },
+            { name: "Klüberlectric KR 44-102", brand: "Kluber", specs: "Grease for electrical contacts, reduces arcing.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberlectric+KR+44-102" },
+            { name: "Klüberlub BE 41-102 BH", brand: "Kluber", specs: "Heavy-duty grease for rolling bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberlub+BE+41-102+BH" },
+            { name: "Klüberlub BEH 11-111 BH", brand: "Kluber", specs: "High-temperature grease, excellent adhesion.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberlub+BEH+11-111+BH" },
+            { name: "Klüberlub OG 11-3000 BH", brand: "Kluber", specs: "Open gear lubricant, high viscosity.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberlub+OG+11-3000+BH" },
+            { name: "Klüberoil 4 UH1-100 N", brand: "Kluber", specs: "Food-grade gear oil, NSF H1 registered.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberoil+4+UH1-100+N" },
+            { name: "Klüberoil 4 UH1-220 N", brand: "Kluber", specs: "Synthetic gear oil for food industry.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberoil+4+UH1-220+N" },
+            { name: "Klüberoil GEM 1-220 N", brand: "Kluber", specs: "Mineral-based gear oil, high load capacity.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberoil+GEM+1-220+N" },
+            { name: "Klüberoil Tex 1-32 N", brand: "Kluber", specs: "Oil for textile machinery, low residue.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberoil+Tex+1-32+N" },
+            { name: "Klüberplex BEM 41-132", brand: "Kluber", specs: "Grease for electric motors, long-term lubrication.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberplex+BEM+41-132" },
+            { name: "Klüberplex BEM 41-141", brand: "Kluber", specs: "High-performance grease for rolling bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberplex+BEM+41-141" },
+            { name: "Klüberplex HB 98-601 BH", brand: "Kluber", specs: "Heavy-duty grease for extreme pressures.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberplex+HB+98-601+BH" },
+            { name: "Klüberplex HB 98-602 BH", brand: "Kluber", specs: "Grease for high loads, excellent corrosion protection.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberplex+HB+98-602+BH" },
+            { name: "Klüberplex MH 41-682 BH", brand: "Kluber", specs: "Grease for heavy machinery, high adhesion.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberplex+MH+41-682+BH" },
+            { name: "Klüberquiet BQH 72-102", brand: "Kluber", specs: "Low-noise grease for rolling bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberquiet+BQH+72-102" },
+            { name: "Klübersynth BH 72-422", brand: "Kluber", specs: "Synthetic grease for high temperatures.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+BH+72-422" },
+            { name: "Klübersynth CH 2-100 N", brand: "Kluber", specs: "High-temperature chain oil, low evaporation.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+CH+2-100+N" },
+            { name: "Klübersynth GEM 4-100 N", brand: "Kluber", specs: "Synthetic gear oil, high scuffing protection.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+GEM+4-100+N" },
+            { name: "Klübersynth GEM 4-220 N", brand: "Kluber", specs: "Synthetic gear oil for heavy loads.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+GEM+4-220+N" },
+            { name: "Klübersynth GH 6-1000", brand: "Kluber", specs: "Synthetic gear oil, high viscosity.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+GH+6-1000" },
+            { name: "Klübersynth GH 6-220", brand: "Kluber", specs: "Synthetic gear oil for industrial applications.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+GH+6-220" },
+            { name: "Klübersynth HB 72-102", brand: "Kluber", specs: "Synthetic grease for high-speed applications.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+HB+72-102" },
+            { name: "Klübersynth UH1 14-151", brand: "Kluber", specs: "Food-grade grease, NSF H1 registered.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+UH1+14-151" },
+            { name: "Klübersynth LR 44-21", brand: "Kluber", specs: "Low-temperature grease, high speed.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+LR+44-21" },
+            { name: "Klübersynth UH1 14-222", brand: "Kluber", specs: "Food-grade grease for general lubrication.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+UH1+14-222" },
+            { name: "Klübersynth UH1 64-62", brand: "Kluber", specs: "Food-grade grease, high load capacity.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+UH1+64-62" },
+            { name: "Klübertemp GR AR 555", brand: "Kluber", specs: "PFPE grease for extreme temperatures.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübertemp+GR+AR+555" },
+            { name: "Klübertemp GR M60", brand: "Kluber", specs: "High-temperature grease, chemically inert.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübertemp+GR+M60" },
+            { name: "Klübertemp HM 83-402", brand: "Kluber", specs: "Long-term grease for high temperatures.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübertemp+HM+83-402" },
+            { name: "LAMORA HLP 68", brand: "Kluber", specs: "Hydraulic oil, excellent wear protection.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=LAMORA+HLP+68" },
+            { name: "MICROLUBE GL 261", brand: "Kluber", specs: "Special grease for sliding friction.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=MICROLUBE+GL+261" },
+            { name: "MICROLUBE GBU-Y 131", brand: "Kluber", specs: "Grease for gears, high load capacity.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=MICROLUBE+GBU-Y+131" },
+            { name: "PARALIQ GA 343", brand: "Kluber", specs: "Food-grade grease, NSF H1 registered.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=PARALIQ+GA+343" },
+            { name: "PETAMO GHY 133 N", brand: "Kluber", specs: "High-temperature grease, long-term lubrication.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=PETAMO+GHY+133+N" },
+            { name: "STABURAGS NBU  Legends12", brand: "Kluber", specs: "Grease for rolling and plain bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=STABURAGS+NBU+12" },
+            { name: "POLYLUB GA 352 P", brand: "Kluber", specs: "Grease for automotive components.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=POLYLUB+GA+352+P" },
+            { name: "POLYLUB GLY 151", brand: "Kluber", specs: "Synthetic grease for plastic components.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=POLYLUB+GLY+151" },
+            { name: "STABUTHERM GH 461", brand: "Kluber", specs: "High-temperature grease for ovens.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=STABUTHERM+GH+461" },
+            { name: "STABUTHERM GH 462", brand: "Kluber", specs: "Grease for high-temperature applications.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=STABUTHERM+GH+462" },
+            { name: "STRUCTOVIS EHD", brand: "Kluber", specs: "Adhesive lubricant for chains and gears.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=STRUCTOVIS+EHD" },
+            { name: "SYNTHESO HT 1000", brand: "Kluber", specs: "High-temperature chain oil.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=SYNTHESO+HT+1000" },
+            { name: "VARILUB PKS 2", brand: "Kluber", specs: "Grease for automotive switches.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=VARILUB+PKS+2" },
+            { name: "WOLFRAKOTE TOP PASTE", brand: "Kluber", specs: "High-temperature assembly paste.", category: "Paste", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=WOLFRAKOTE+TOP+PASTE" },
+            { name: "CENTOPLEX BE 41-103 BH", brand: "Kluber", specs: "Heavy-duty grease for bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=CENTOPLEX+BE+41-103+BH" },
+            { name: "CENTOPLEX GLP 100-00 BH", brand: "Kluber", specs: "Fluid grease for centralized systems.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=CENTOPLEX+GLP+100-00+BH" },
+            { name: "CENTOPLEX GLP 201 BH", brand: "Kluber", specs: "Multi-purpose grease, low temperature.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=CENTOPLEX+GLP+201+BH" },
+            { name: "CENTOPLEX GLP 500", brand: "Kluber", specs: "Fluid grease for gears and bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=CENTOPLEX+GLP+500" },
+            { name: "ISOFLEX LDS 18 SPECIAL A", brand: "Kluber", specs: "Low-noise grease for precision bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=ISOFLEX+LDS+18+SPECIAL+A" },
+            { name: "ISOFLEX NBU 15", brand: "Kluber", specs: "High-speed grease for spindle bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=ISOFLEX+NBU+15" },
+            { name: "ISOFLEX TOPAS NB 52", brand: "Kluber", specs: "Synthetic grease for rolling bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=ISOFLEX+TOPAS+NB+52" },
+            { name: "Klüberoil G 1-150 BH", brand: "Kluber", specs: "Gear oil for industrial applications.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberoil+G+1-150+BH" },
+            { name: "Klüberoil GEM 1-220 N", brand: "Kluber", specs: "Mineral-based gear oil, high load.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klüberoil+GEM+1-220+N" },
+            { name: "Klübersynth M 8-220", brand: "Kluber", specs: "Synthetic oil for high loads.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=Klübersynth+M+8-220" },
+            { name: "MICROLUBE GB 00", brand: "Kluber", specs: "Fluid grease for heavy-duty gears.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/000000/FFFFFF?text=MICROLUBE+GB+00" },
+            // OKS Products
+            { name: "OKS 1035/1", brand: "OKS", specs: "Silicone oil for high-temperature applications.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+1035/1" },
+            { name: "OKS 111", brand: "OKS", specs: "MoS2 powder for dry lubrication.", category: "Powder", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+111" },
+            { name: "OKS 1110/6", brand: "OKS", specs: "Silicone grease, food-grade, NSF H1.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+1110/6" },
+            { name: "OKS 1361", brand: "OKS", specs: "Silicone release agent, non-stick coating.", category: "Spray", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+1361" },
+            { name: "OKS 200", brand: "OKS", specs: "MoS2 paste for heavy loads.", category: "Paste", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+200" },
+            { name: "OKS 246", brand: "OKS", specs: "High-temperature grease, copper-based.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+246" },
+            { name: "OKS 250", brand: "OKS", specs: "White paste for clean assembly.", category: "Paste", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+250" },
+            { name: "OKS 260", brand: "OKS", specs: "White assembly paste, high loads.", category: "Paste", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+260" },
+            { name: "OKS 265", brand: "OKS", specs: "Long-term grease for rolling bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+265" },
+            { name: "OKS 3200-N/150 MoX Active Gear Oil", brand: "OKS", specs: "High-performance gear oil.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+3200-N/150+MoX" },
+            { name: "OKS 345/1 Plus", brand: "OKS", specs: "Penetrating oil, corrosion protection.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+345/1+Plus" },
+            { name: "OKS 3720", brand: "OKS", specs: "Food-grade gear oil, NSF H1.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+3720" },
+            { name: "OKS 410", brand: "OKS", specs: "MoS2 grease for heavy-duty applications.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+410" },
+            { name: "OKS 420", brand: "OKS", specs: "High-temperature grease, long-term.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+420" },
+            { name: "OKS 450", brand: "OKS", specs: "Adhesive chain lubricant, high loads.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+450" },
+            { name: "OKS 475 HS", brand: "OKS", specs: "High-speed grease, food-grade.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+475+HS" },
+            { name: "OKS 2601", brand: "OKS", specs: "Cleaner spray for industrial parts.", category: "Spray", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+2601" },
+            { name: "OKS 2621 Non Live", brand: "OKS", specs: "Contact cleaner, residue-free.", category: "Spray", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+2621+Non+Live" },
+            { name: "OKS 91361 MR Spray", brand: "OKS", specs: "Moisture-repellent spray.", category: "Spray", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+91361+MR+Spray" },
+            { name: "OKS 91621 Anti Spatter Spray", brand: "OKS", specs: "Welding spatter protection.", category: "Spray", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+91621+Anti+Spatter" },
+            { name: "OKS 9433 LONGLIFE", brand: "OKS", specs: "Long-term grease for bearings.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+9433+LONGLIFE" },
+            { name: "OKS Multipurpose Grease", brand: "OKS", specs: "Universal grease for industrial use.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+Multipurpose+Grease" },
+            { name: "OKS 476", brand: "OKS", specs: "Food-grade grease, high adhesion.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+476" },
+            { name: "OKS 640", brand: "OKS", specs: "Multi-purpose oil, corrosion protection.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+640" },
+            { name: "OKS Silicone Grease", brand: "OKS", specs: "Silicone-based grease, wide temperature range.", category: "Grease", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+Silicone+Grease" },
+            { name: "OKS 451", brand: "OKS", specs: "Chain lubricant, transparent, high adhesion.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+451" },
+            { name: "OKS 641", brand: "OKS", specs: "Maintenance oil, multi-purpose.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+641" },
+            { name: "OKS Chain Lub Auto", brand: "OKS", specs: "Automatic chain lubricant, high performance.", category: "Oil", image: "https://via.placeholder.com/150x120.webp/FF0000/FFFFFF?text=OKS+Chain+Lub+Auto" },
+            // Total Energies Products
+            { name: "EQUIVIS AF", brand: "Total Energies", specs: "Zinc-free hydraulic oil (HVLP), high viscosity index, ideal for low-temperature operations.", category: "Hydraulic Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=EQUIVIS+AF" },
+            { name: "EQUIVIS ZS", brand: "Total Energies", specs: "Anti-wear hydraulic oil (HVLP), high pressure and temperature, suitable for outdoor equipment.", category: "Hydraulic Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=EQUIVIS+ZS" },
+            { name: "AZOLLA AL", brand: "Total Energies", specs: "Food-grade hydraulic oil, NSF H1 registered, for sensitive applications.", category: "Hydraulic Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=AZOLLA+AL" },
+            { name: "AZOLLA AF", brand: "Total Energies", specs: "Zinc-free hydraulic oil (HLP), prevents deposits in high-temperature systems.", category: "Hydraulic Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=AZOLLA+AF" },
+            { name: "AZOLLA ZS Super Clean (NAS 6)", brand: "Total Energies", specs: "Premium anti-wear hydraulic oil (HLP), ultra-clean (NAS 6), for high-pressure systems.", category: "Hydraulic Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=AZOLLA+ZS+Super+Clean" },
+            { name: "ACANTIS HM", brand: "Total Energies", specs: "Anti-wear hydraulic oil (HM), suitable for gearboxes, compressors, and chain drives.", category: "Hydraulic Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=ACANTIS+HM" },
+            { name: "ACANTIS ECO", brand: "Total Energies", specs: "Eco-friendly hydraulic oil, re-refined, high performance for industrial systems.", category: "Hydraulic Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=ACANTIS+ECO" },
+            { name: "SERIOLA AB", brand: "Total Energies", specs: "Synthetic heat transfer fluid, high thermal stability for industrial heating systems.", category: "Heat Transfer Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=SERIOLA+AB" },
+            { name: "SERIOLA 32", brand: "Total Energies", specs: "Mineral-based thermic fluid, excellent heat transfer for industrial applications.", category: "Heat Transfer Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=SERIOLA+32" },
+            { name: "NATERIA MX 40", brand: "Total Energies", specs: "Gas engine oil, high performance for natural gas engines, extended drain intervals.", category: "Gas Engine Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=NATERIA+MX+40" },
+            { name: "NATERIA MWX 40", brand: "Total Energies", specs: "Low-ash gas engine oil, suitable for biogas and landfill gas engines.", category: "Gas Engine Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=NATERIA+MWX+40" },
+            { name: "NATERIA MP 40", brand: "Total Energies", specs: "Gas engine oil for high-output engines, excellent wear protection.", category: "Gas Engine Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=NATERIA+MP+40" },
+            { name: "NATERIA MJ 40", brand: "Total Energies", specs: "Gas engine oil for corrosive gas environments, high thermal stability.", category: "Gas Engine Oil", image: "https://via.placeholder.com/150x120.webp/0055A4/FFFFFF?text=NATERIA+MJ+40" }
+        ];
+
+        const searchInput = document.getElementById('productSearch');
+        const kluberProductList = document.getElementById('kluberProductList');
+        const oksProductList = document.getElementById('oksProductList');
+        const totalProductList = document.getElementById('totalProductList');
+        const productModal = document.getElementById('productModal');
+        const modalProductName = document.getElementById('modalProductName');
+        const modalProductBrand = document.getElementById('modalProductBrand');
+        const modalProductSpecs = document.getElementById('modalProductSpecs');
+        const closeProductModal = document.getElementById('closeProductModal');
+        const industryModal = document.getElementById('industryModal');
+        const modalIndustryName = document.getElementById('modalIndustryName');
+        const closeIndustryModal = document.getElementById('closeIndustryModal');
+
+        // Smooth Scroll Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = targetId === 'home' ? document.body : document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Product Modal Functions
+        function showProductModal(product) {
+            modalProductName.textContent = product.name;
+            modalProductBrand.textContent = `Brand: ${product.brand}`;
+            modalProductSpecs.textContent = `Specifications: ${product.specs}`;
+            productModal.classList.add('show');
+        }
+
+        function hideProductModal() {
+            productModal.classList.remove('show');
+        }
+
+        closeProductModal.addEventListener('click', hideProductModal);
+
+        productModal.addEventListener('click', (e) => {
+            if (e.target === productModal) {
+                hideProductModal();
+            }
+        });
+
+        // Industry Modal Functions
+        function showIndustryModal(industry) {
+            modalIndustryName.textContent = industry;
+            industryModal.classList.add('show');
+        }
+
+        function hideIndustryModal() {
+            industryModal.classList.remove('show');
+        }
+
+        closeIndustryModal.addEventListener('click', hideIndustryModal);
+
+        industryModal.addEventListener('click', (e) => {
+            if (e.target === industryModal) {
+                hideIndustryModal();
+            }
+        });
+
+        // Product Display Function
+        function displayProducts(searchTerm = '') {
+            kluberProductList.innerHTML = '';
+            oksProductList.innerHTML = '';
+            totalProductList.innerHTML = '';
+
+            const filteredProducts = products.filter(product =>
+                product.name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+
+            const kluberProducts = filteredProducts.filter(p => p.brand === 'Kluber');
+            const oksProducts = filteredProducts.filter(p => p.brand === 'OKS');
+            const totalProducts = filteredProducts.filter(p => p.brand === 'Total Energies');
+
+            if (kluberProducts.length === 0) {
+                kluberProductList.innerHTML = '<p class="text-center text-gray-500 col-span-3">No Kluber products found.</p>';
+            } else {
+                kluberProducts.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.className = 'bg-white p-4 rounded-lg shadow-lg kluber-product';
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}" class="product-image mb-2">
+                        <h4 class="text-lg font-semibold text-black">${product.name}</h4>
+                        <p class="text-gray-600">Brand: ${product.brand}</p>
+                    `;
+                    productDiv.addEventListener('click', () => showProductModal(product));
+                    kluberProductList.appendChild(productDiv);
+                });
+            }
+
+            if (oksProducts.length === 0) {
+                oksProductList.innerHTML = '<p class="text-center text-gray-500 col-span-3">No OKS products found.</p>';
+            } else {
+                oksProducts.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.className = 'bg-white p-4 rounded-lg shadow-lg oks-product';
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}" class="product-image mb-2">
+                        <h4 class="text-lg font-semibold text-red-600">${product.name}</h4>
+                        <p class="text-gray-600">Brand: ${product.brand}</p>
+                    `;
+                    productDiv.addEventListener('click', () => showProductModal(product));
+                    oksProductList.appendChild(productDiv);
+                });
+            }
+
+            if (totalProducts.length === 0) {
+                totalProductList.innerHTML = '<p class="text-center text-gray-500 col-span-3">No Total Energies products found.</p>';
+            } else {
+                totalProducts.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.className = 'bg-white p-4 rounded-lg shadow-lg total-product';
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}" class="product-image mb-2">
+                        <h4 class="text-lg font-semibold text-blue-600">${product.name}</h4>
+                        <p class="text-gray-600">Brand: ${product.brand}</p>
+                    `;
+                    productDiv.addEventListener('click', () => showProductModal(product));
+                    totalProductList.appendChild(productDiv);
+                });
+            }
+        }
+
+        // Industry Click Handlers
+        const industryItems = document.querySelectorAll('.industry-item');
+        industryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const industry = item.getAttribute('data-industry');
+                showIndustryModal(industry);
+            });
+        });
+
+        // Search Input Handler
+        searchInput.addEventListener('input', () => {
+            displayProducts(searchInput.value);
+        });
+
+        // Display all products initially
+        displayProducts();
+    </script>
+</body>
+</html>
